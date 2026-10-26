@@ -92,7 +92,7 @@ git pull
 
 ## Data
 
-Most data are not in this repository: each week's README says how to get them, usually by running a `fetch_data_*.py` script in the week's `data/` folder. Data files you download into `data/` are ignored by git, so `git pull` never overwrites them.
+The data for each week are in its `data/` folder, together with the `fetch_data_*.py` script that downloaded them. You don't need to run these scripts. If you do, to get newer data, the course files change: save the new data under a different name first, or restore the original with `git restore week1/data` before the next `git pull`.
 
 ## No git?
 

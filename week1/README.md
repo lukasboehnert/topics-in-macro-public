@@ -14,14 +14,12 @@ The two lecture scripts give the same estimates. Only the bootstrap bands and th
 ## Data
 
 - `CTV_DATA.xlsx` (in `data/`): UK monthly data from Cesa-Bianchi, Thwaites and Vicondoa (2020), for the lecture scripts. We use output (`gdp`), unemployment (`unempl`), the 1-year gilt yield (`i_1YR`) and the Cloyne and Hürtgen (2016) narrative monetary policy shock (`cloyne`), 1979m7 to 2009m2 (T = 356). Missing values are coded 123456789.
-- `pt_monthly.csv`, `pt_gdp_quarterly.csv`: Portuguese data for the exercise. These are not in the repository. Before class, run once, with internet (about a minute):
+- `pt_monthly.csv`, `pt_gdp_quarterly.csv` (in `data/`): Portuguese data for the exercise, made by `data/fetch_data_PT.py`. It downloads industrial production, HICP and unemployment from Eurostat, the Euribor and the deposit facility rate from the ECB, and the Jarociński–Karadi (2020) shocks from [github.com/marekjarocinski/jkshocks_update_ecb](https://github.com/marekjarocinski/jkshocks_update_ecb). You don't need to run it: the `check(...)` values in the exercise are computed from the data in the repository, and newer data may be revised. To see how the data are built, or to get the latest months for your own work:
 
   ```
   cd week1/data
   uv run fetch_data_PT.py
   ```
-
-  This downloads industrial production, HICP and unemployment from Eurostat, the Euribor and the deposit facility rate from the ECB, and the Jarociński–Karadi (2020) shocks from [github.com/marekjarocinski/jkshocks_update_ecb](https://github.com/marekjarocinski/jkshocks_update_ecb).
 
 ## Setup
 

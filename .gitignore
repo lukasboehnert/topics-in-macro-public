@@ -3,14 +3,6 @@
 __pycache__/
 .ipynb_checkpoints/
 
-# Data: download it yourself, see each week's README
-**/data/*.csv
-**/data/*.xlsx
-**/data/*.xls
-**/data/*.mat
-# ...except these, which are published here
-!week1/data/CTV_DATA.xlsx
-
 # Figures the scripts write
 figures*/
 
