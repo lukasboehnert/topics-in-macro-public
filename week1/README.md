@@ -13,10 +13,8 @@ The two lecture scripts give the same estimates. Only the bootstrap bands and th
 
 ## Data
 
-The data are not in this repository. Before class, put them in `week1/data/`:
-
-- `CTV_DATA.xlsx`: UK monthly data from Cesa-Bianchi, Thwaites and Vicondoa (2020), for the lecture scripts. Download it from the course page. We use output (`gdp`), unemployment (`unempl`), the 1-year gilt yield (`i_1YR`) and the Cloyne and Hürtgen (2016) narrative monetary policy shock (`cloyne`), 1979m7 to 2009m2 (T = 356). Missing values are coded 123456789.
-- `pt_monthly.csv`, `pt_gdp_quarterly.csv`: Portuguese data for the exercise. Run once, with internet (about a minute):
+- `CTV_DATA.xlsx` (in `data/`): UK monthly data from Cesa-Bianchi, Thwaites and Vicondoa (2020), for the lecture scripts. We use output (`gdp`), unemployment (`unempl`), the 1-year gilt yield (`i_1YR`) and the Cloyne and Hürtgen (2016) narrative monetary policy shock (`cloyne`), 1979m7 to 2009m2 (T = 356). Missing values are coded 123456789.
+- `pt_monthly.csv`, `pt_gdp_quarterly.csv`: Portuguese data for the exercise. These are not in the repository. Before class, run once, with internet (about a minute):
 
   ```
   cd week1/data

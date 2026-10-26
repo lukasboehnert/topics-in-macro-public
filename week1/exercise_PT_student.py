@@ -289,5 +289,3 @@ show(axes[0, 0].figure, "pt_poor_man")
 # - c) Replace headline HICP by core inflation (`core_sa` in the data). Is the price response clearer?
 # - d) Newey–West instead of lag augmentation: `.fit(cov_type="HAC", cov_kwds={"maxlags": h + 4})`. Do the bands change much?
 # - e) LP-IV: instrument the 1-year Euribor with the MP shock, as in L3 of `week1_simple.py` (linearmodels, `[e1y ~ mp_median]`). What is the first-stage F, and what does that do to the bands?
-#
-# Then move on to `exercise_EA.py`: is Portugal typical of the euro area?

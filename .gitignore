@@ -8,6 +8,8 @@ __pycache__/
 **/data/*.xlsx
 **/data/*.xls
 **/data/*.mat
+# ...except these, which are published here
+!week1/data/CTV_DATA.xlsx
 
 # Figures the scripts write
 figures*/

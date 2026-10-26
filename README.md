@@ -31,4 +31,4 @@ uv sync
 
 ## Data
 
-Data are not in this repository. Each week's README says how to get them: most are downloaded by a `fetch_data_*.py` script in the week's `data/` folder, and the rest are on the course page. Data files you put in `data/` are ignored by git, so `git pull` never overwrites them.
+Most data are not in this repository: each week's README says how to get them, usually by running a `fetch_data_*.py` script in the week's `data/` folder. Data files you download into `data/` are ignored by git, so `git pull` never overwrites them.
