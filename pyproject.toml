@@ -1,0 +1,19 @@
+[project]
+name = "topics-in-macro-phd"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "eurostat>=1.1.1",
+    "linearmodels>=7.1",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "openpyxl>=3.1.5",
+    "pandas>=3.1.0",
+    "requests>=2.34.2",
+    "statsmodels>=0.15.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+]

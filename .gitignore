@@ -1,0 +1,17 @@
+# Python
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Data: download it yourself, see each week's README
+**/data/*.csv
+**/data/*.xlsx
+**/data/*.xls
+**/data/*.mat
+
+# Figures the scripts write
+figures*/
+
+# OS / editor
+.DS_Store
+~$*
