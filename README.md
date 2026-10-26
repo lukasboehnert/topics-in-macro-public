@@ -8,7 +8,15 @@ Course outline and assessment: [syllabus.pdf](syllabus.pdf). New material is add
 
 | Week | Topic | Slides | Code |
 | --- | --- | --- | --- |
+| | **Part I: Empirical methods** | | |
 | 1 | Local projections vs VARs | [week1.pdf](slides/week1.pdf) | [week1/](week1/) |
+| 2 | Shift-share instrumental variables | coming soon | [week2/](week2/) |
+| | **Part II: International macroeconomics** | | |
+| 3 | Financial crises and policy responses in open economies | coming soon | [week3/](week3/) |
+| 4 | Monetary policy in open economies | coming soon | [week4/](week4/) |
+| | **Part III: Macro-development** | | |
+| 5 | Misallocation and growth | coming soon | [week5/](week5/) |
+| 6 | Introduction to spatial economics | coming soon | [week6/](week6/) |
 
 Setting up Python: [python_setup.pdf](slides/python_setup.pdf).
 
