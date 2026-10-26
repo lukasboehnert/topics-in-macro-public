@@ -25,7 +25,7 @@ The two lecture scripts give the same estimates. Only the bootstrap bands and th
 
 ## Setup
 
-See the Setup section of the [course README](../README.md). Then run any script from this folder:
+See [Getting started](../README.md#getting-started) in the course README. Then run any script from this folder:
 
 ```
 cd week1
