@@ -17,8 +17,8 @@ Setting up Python: [python_setup.pdf](slides/python_setup.pdf).
 The code is in Python 3.13 and uses [uv](https://docs.astral.sh/uv/) to install packages. Once, after installing uv:
 
 ```
-git clone https://github.com/<user>/topics-in-macro.git
-cd topics-in-macro
+git clone https://github.com/lukasboehnert/topics-in-macro-public.git
+cd topics-in-macro-public
 uv sync
 ```
 
