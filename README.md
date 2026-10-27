@@ -2,7 +2,7 @@
 
 Code and slides for the PhD course Topics in Macroeconomics, 2026/27, 2nd trimester. Instructor: Lukas Boehnert.
 
-Course outline and assessment: [syllabus.pdf](syllabus.pdf). New material is added here week by week.
+Course outline and assessment: [syllabus.pdf](syllabus.pdf). Readings: [reading_list.pdf](reading_list.pdf). New material is added here week by week.
 
 ## Contents
 
