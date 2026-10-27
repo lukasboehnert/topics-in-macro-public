@@ -370,6 +370,48 @@ ax.set_ylim(0, 1)
 finish(ax, "LP (R² method): share of output forecast error variance", "share", loc="upper left")
 show(fig)                                                                # the slide's version is drawn in C4
 
+# %% [markdown]
+# ## L7. State dependence: is the effect different when unemployment is high?
+# The recursive LP of L2(c), with the rate interacted with the state $s_{t-1} = u_{t-1} - \bar{u}$ (unemployment last month, demeaned):
+# $$y_{t+h} = \mu_h + \theta_h\, i_t + \phi_h\, i_t s_{t-1} + \gamma_h'(y_t, u_t) + \text{12 lags} + \xi_{h,t+h}$$
+# - $\theta_h$ is the response at average unemployment, $\phi_h$ how it changes per pp of unemployment.
+# - The response at unemployment $c$ is $\theta_h + \phi_h (c - \bar{u})$. Centering the state at $c$ instead of $\bar{u}$ makes it the coefficient on $i_t$, standard error included: `i_s10`, `i_s90`.
+# - $s_{t-1}$ needs no term of its own: $u_{t-1}$ is already among the lags.
+#
+# With the narrative instrument, $z_t s_{t-1}$ is too weak an instrument for $i_t s_{t-1}$ (first-stage t printed below), so L7 uses the recursive LP.
+
+# %%
+ctrl_rec = ["y", "u"] + lag_terms(["y", "u", "i"], 12)                  # L2(c)
+ubar = df.u_l1.mean()
+u10, u90 = np.nanpercentile(df.u_l1, [10, 90])
+for name, c in {"s": ubar, "s10": u10, "s90": u90}.items():
+    df[f"i_{name}"] = df.i * (df.u_l1 - c)                               # i_t (u_{t-1} - c)
+df["z_s"] = df.z * (df.u_l1 - ubar)
+theta7 = lp("y", "i", ["i_s"] + ctrl_rec)                                # response at average unemployment
+phi7 = lp("y", "i_s", ["i"] + ctrl_rec)                                  # interaction
+at10 = lp("y", "i", ["i_s10"] + ctrl_rec)                                # response at the 10th percentile
+at90 = lp("y", "i", ["i_s90"] + ctrl_rec)                                # ... and at the 90th
+fs7 = lp("i_s", "z_s", ["z"] + controls12, H=0)[0]                       # narrative first stage for i_t s_{t-1}
+print(f"L7 unemployment: mean {ubar:.1f}%, 10th percentile {u10:.1f}%, 90th {u90:.1f}%")
+print("L7 theta (average u) h = 12/24/36:", theta7[[12, 24, 36], 0].round(2), " se", theta7[[12, 24, 36], 1].round(2))
+print("L7 phi (per pp of u) h = 12/24/36:", phi7[[12, 24, 36], 0].round(2), " se", phi7[[12, 24, 36], 1].round(2))
+print("L7 at 10th / 90th percentile, h = 24:", at10[24, 0].round(2), "/", at90[24, 0].round(2),
+      " h = 36:", at10[36, 0].round(2), "/", at90[36, 0].round(2))
+print(f"L7 narrative IV: first-stage t of z_t s_t-1 for i_t s_t-1 = {fs7[0] / fs7[1]:.1f}")
+
+fig, ax = plt.subplots(1, 3, figsize=(13, 3.4))
+band(ax[0], theta7, BLUE, f"at average u ({ubar:.1f}%)")
+ax[0].plot(hs, rec12[:, 0], color=GREY, ls="--", label="no interaction (L2)")
+finish(ax[0], "Main effect $\\theta_h$", loc="lower left")
+band(ax[1], phi7, GREEN, "per +1pp unemployment")
+finish(ax[1], "Interaction $\\phi_h$", "change in the response", loc="upper left")
+band(ax[2], at10, BLUE, f"u = {u10:.1f}% (10th pct)")
+band(ax[2], at90, RED, f"u = {u90:.1f}% (90th pct)")
+finish(ax[2], "Response at low and high unemployment", loc="lower left")
+for a in (ax[0], ax[2]):
+    a.set_ylim(-2.6, 1.0)
+show(fig, "l7_state")
+
 
 # %% [markdown]
 # # Part B. VARs
