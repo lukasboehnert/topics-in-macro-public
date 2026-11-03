@@ -10,7 +10,7 @@ Course outline and assessment: [syllabus.pdf](syllabus.pdf). Readings: [reading_
 | --- | --- | --- | --- |
 | | **Part I: Empirical methods** | | |
 | 1 | Local projections vs VARs | [week1.pdf](slides/week1.pdf), reading group: [Andreolli, Rickard & Surico (2025)](slides/week1_paper_ARS.pdf) | [week1/](week1/) |
-| 2 | Shift-share instrumental variables | [week2.pdf](slides/week2.pdf), reading group: [Nakamura & Steinsson (2014)](slides/week2_paper_NS.pdf) | [week2/](week2/) |
+| 2 | Shift-share instrumental variables | [week2.pdf](slides/week2.pdf), reading group: [Nakamura & Steinsson (2014)](slides/week2_paper_NS.pdf), [discussion](slides/week2_paper_NS_discussion.pptx) | [week2/](week2/) |
 | | **Part II: International macroeconomics** | | |
 | 3 | Financial crises and policy responses in open economies | coming soon | [week3/](week3/) |
 | 4 | Monetary policy in open economies | coming soon | [week4/](week4/) |
