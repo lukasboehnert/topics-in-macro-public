@@ -178,12 +178,31 @@ print(f"A 10% fall in aggregate c^T lowers p^N by {100 * (1 - price(0.9) / price
 # ## B1. Competitive equilibrium by time iteration
 # The household's Euler equation, with multiplier $\mu \ge 0$ on the constraint:
 # $$u_T(c^T) = \beta R\, E\left[u_T(c^{T\prime})\right] + \mu.$$
-# Time iteration: given tomorrow's marginal utility $M(b', y')$ on the grid, at each $(b, y^T)$
-# 1. compute $F(b') = u_T(b + y^T - q b') - \beta R \sum_{y'} P(y^T, y') M(b', y')$; $F$ rises with $b'$;
-# 2. if $F \ge 0$ already at the limit, the constraint binds: $b' = b'_{lim}$, $\mu = F(b'_{lim})$;
-# 3. otherwise find the $b'$ with $F(b') = 0$ by bisection;
+# **The idea.** Guess what the future looks like (tomorrow's marginal utility), work out what households do
+# today given that guess, use today's choices as the new guess for the future, and repeat until the guess stops
+# changing.
 #
-# then set $M = u_T(c^T)$ and repeat until $M$ stops changing.
+# **Step 0, before the loop: the borrowing limit** $b'_{lim}(b, y^T)$ (computed in B0). It is a small fixed point
+# of its own: collateral depends on $p^N$, $p^N$ on $c^T$, and $c^T = b + y^T - q b'$ on $b'$. Households take
+# $p^N$ as given, but in equilibrium it must be consistent with aggregate $c^T$. With identical households,
+# individual and aggregate choices coincide, so the limit is the same in every iteration.
+#
+# **The loop.** Given tomorrow's marginal utility $M(b', y')$ on the grid:
+# 1. *Expectations.* $E[M(b', y') \mid y^T] = \sum_{y'} P(y^T, y') M(b', y')$: the expected marginal value of
+#    one more unit of wealth tomorrow, for every candidate $b'$.
+# 2. *Euler residual.* At each $(b, y^T)$, $F(b') = u_T(b + y^T - q b') - \beta R\, E[M(b', y') \mid y^T]$.
+#    $F$ rises with $b'$: saving more lowers $c^T$ today and raises today's marginal utility.
+# 3. *Corner first.* If $F \ge 0$ already at the limit, households would like to borrow even more but cannot:
+#    the constraint binds, $b' = b'_{lim}$, and $\mu = F(b'_{lim})$ is its shadow cost.
+# 4. *Interior otherwise.* Find the $b'$ with $F(b') = 0$ by bisection; $\mu = 0$.
+# 5. *Update.* Compute $c^T$ from the budget constraint, set $M = u_T(c^T)$, and go back to 1 until $M$ stops
+#    changing.
+#
+# **Why this is the market outcome.** In step 5, $M$ is just private marginal utility. Households ignore that
+# borrowing more today tightens everybody's constraint tomorrow through a lower $p^N$. The planner (B3) runs the
+# same loop but adds $\mu\psi$ to $M$: that term is the pecuniary externality.
+#
+# Once it converges, the policy $b'(b, y^T)$ is all we need to simulate the economy (B2).
 
 # %%
 def solve(planner, tax=None, tol=1e-10, damp=0.5, maxit=5000):
