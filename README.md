@@ -12,8 +12,8 @@ Course outline and assessment: [syllabus.pdf](syllabus.pdf). Readings: [reading_
 | 1 | Local projections vs VARs | [week1.pdf](slides/week1.pdf), reading group: [Andreolli, Rickard & Surico (2025)](slides/week1_paper_ARS.pdf) | [week1/](week1/) |
 | 2 | Shift-share instrumental variables | [week2.pdf](slides/week2.pdf), reading group: [Nakamura & Steinsson (2014)](slides/week2_paper_NS.pdf), [discussion](slides/week2_paper_NS_discussion.pptx) | [week2/](week2/) |
 | | **Part II: International macroeconomics** | | |
-| 3 | Financial crises and policy responses in open economies | coming soon | [week3/](week3/) |
-| 4 | Monetary policy in open economies | coming soon | [week4/](week4/) |
+| 3 | Financial crises and policy responses in open economies | [week3.pdf](slides/week3.pdf), reading group: [Bianchi & Mendoza (2018)](slides/week3_paper_BM.pptx), [discussion](slides/week3_paper_BM_discussion.pdf) | [week3/](week3/) |
+| 4 | Monetary policy in open economies | [week4.pdf](slides/week4.pdf), reading group: [Fan, Peters & Zilibotti (2023)](slides/week4_paper_FAN_presentation.pdf), [discussion](slides/week4_paper_FPZ_discussion.pdf) | [week4/](week4/) |
 | | **Part III: Macro-development** | | |
 | 5 | Misallocation and growth | coming soon | [week5/](week5/) |
 | 6 | Introduction to spatial economics | coming soon | [week6/](week6/) |
